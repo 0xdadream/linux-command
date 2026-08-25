@@ -1,9 +1,12 @@
 name: CI
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   build-deploy:
+    if: github.repository == 'jaywcjlove/linux-command'
     runs-on: ubuntu-latest
     permissions:
       contents: write
